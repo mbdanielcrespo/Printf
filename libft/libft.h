@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danalmei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: danalmei <danalmei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 13:53:02 by danalmei          #+#    #+#             */
-/*   Updated: 2023/04/23 20:49:33 by danalmei         ###   ########.fr       */
+/*   Updated: 2023/04/28 19:36:05 by danalmei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,10 @@ t_i32	ft_atoi(const char *str);
 char	*ft_itoa(t_i32 n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(t_u32, char*));
-void	ft_putchar_fd(t_i8 c, t_i32 fd);
+void	ft_putchar_fdp(t_i8 c, t_i32 fd);
 void	ft_putendl_fd(char *s, t_i32 fd);
-void	ft_putnbr_fd(t_i32 n, t_i32 fd);
-void	ft_putstr_fd(char *s, t_i32 fd);
+void	ft_putnbr_fdp(t_i32 n, t_i32 fd);
+void	ft_putstr_fdp(char *s, t_i32 fd);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstclear(t_list **lst, void (*del)(void *));

@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danalmei <danalmei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/12 13:23:59 by danalmei          #+#    #+#             */
-/*   Updated: 2023/04/28 18:53:30 by danalmei         ###   ########.fr       */
+/*   Created: 2023/04/28 19:05:03 by danalmei          #+#    #+#             */
+/*   Updated: 2023/04/28 19:38:02 by danalmei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "printf.h"
 
-void	*ft_calloc(t_size count, t_size size)
+int main()
 {
-	void	*ptr;
+    char    *str;
+    char    ch;
+    int		num;
+	unsigned int	u_num;
 
-	if (!count || !size)
-		return (NULL);
-	ptr = (void *)malloc(count * size);
-	if (!ptr)
-		return (NULL);
-	ft_bzero(ptr, count * size);
-	return (ptr);
+    ch = 'a';
+    str = "Hello world!";
+	num = 23456;
+	u_num = 23456;
+	printf("test -> %");
+    ft_printf("This is a str -> %s", str);
+    ft_printf("This is a char -> %c", ch);
+    ft_printf("This is a num -> %i", num);
+    ft_printf("This is a unsigned num -> %u", u_num);
 }

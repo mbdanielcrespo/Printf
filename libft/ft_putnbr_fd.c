@@ -3,34 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danalmei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: danalmei <danalmei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 13:49:41 by danalmei          #+#    #+#             */
-/*   Updated: 2023/04/23 20:22:13 by danalmei         ###   ########.fr       */
+/*   Updated: 2023/04/28 19:34:12 by danalmei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(t_i32 n, t_i32 fd)
+int	ft_putnbr_fdp(t_i32 n, t_i32 fd)
 {
 	t_i64	nb;
+	int	c;
 
+	c = 0;
 	nb = n;
 	if (nb < 0)
 	{
-		ft_putchar_fd('-', fd);
+		ft_putchar_fdp('-', fd);
 		nb = nb * -1;
 	}
 	if (nb >= 10)
 	{
-		ft_putnbr_fd(nb / 10, fd);
-		ft_putnbr_fd(nb % 10, fd);
+		ft_putnbr_fdp(nb / 10, fd);
+		ft_putnbr_fdp(nb % 10, fd);
+		c++;
 	}
 	else
 	{
-		ft_putchar_fd(nb + '0', fd);
+		ft_putchar_fdp(nb + '0', fd);
+		c++;
 	}
+	return (c);
 }
 /*
 int	main()
