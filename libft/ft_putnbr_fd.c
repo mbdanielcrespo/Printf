@@ -23,16 +23,17 @@ int	ft_putnbr_fdp(t_i32 n, t_i32 fd)
 	{
 		ft_putchar_fdp('-', fd);
 		nb = nb * -1;
+		c++;
 	}
 	if (nb >= 10)
 	{
-		ft_putnbr_fdp(nb / 10, fd);
+		c += ft_putnbr_fdp(nb / 10, fd);
 		ft_putnbr_fdp(nb % 10, fd);
 		c++;
 	}
 	else
 	{
-		ft_putchar_fdp(nb + '0', fd);
+		c +=ft_putchar_fdp(nb + '0', fd);
 		c++;
 	}
 	return (c);

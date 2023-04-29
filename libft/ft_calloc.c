@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danalmei <danalmei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/25 20:08:49 by danalmei          #+#    #+#             */
-/*   Updated: 2023/04/29 21:50:48 by danalmei         ###   ########.fr       */
+/*   Created: 2023/04/12 13:23:59 by danalmei          #+#    #+#             */
+/*   Updated: 2023/04/28 18:53:30 by danalmei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libft.h"
 
-# define HEX_L "0123456789abcdef"
-# define HEX_U "0123456789ABCDEF"
-#include <stdio.h> //#Remove
-#include <unistd.h>
-#include <stdarg.h>
-#include "libft/libft.h"
+void	*ft_calloc(t_size count, t_size size)
+{
+	void	*ptr;
 
-int	ft_printf(const char *str, ...);
-int	ft_print_ptr(unsigned long ptr);
-
-#endif
+	if (!count || !size)
+		return (NULL);
+	ptr = (void *)malloc(count * size);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, count * size);
+	return (ptr);
+}
