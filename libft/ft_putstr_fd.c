@@ -17,8 +17,8 @@ int	ft_putstr_fdp(char *s, t_i32 fd)
 	int	c;
 
 	if (!s || fd < 0)
-		return ;
+		return (0);
 	write(fd, s, ft_strlen(s));
 	c = ft_strlen(s);
-	return (c)
+	return (c);
 }

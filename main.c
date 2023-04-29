@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int main()
 {
@@ -23,9 +23,8 @@ int main()
     str = "Hello world!";
 	num = 23456;
 	u_num = 23456;
-	printf("test -> %");
-    ft_printf("This is a str -> %s", str);
-    ft_printf("This is a char -> %c", ch);
-    ft_printf("This is a num -> %i", num);
-    ft_printf("This is a unsigned num -> %u", u_num);
+    printf("  Lenght -> %d\n", ft_printf("This is a str -> %s", str));
+    printf("  Lenght -> %d\n", ft_printf("This is a char -> %c", ch));
+    printf("  Lenght -> %d\n", ft_printf("This is a num -> %i", num));
+    printf("  Lenght -> %d\n", ft_printf("This is a unsigned num -> %u", u_num));
 }

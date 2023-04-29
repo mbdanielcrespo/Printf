@@ -14,11 +14,8 @@
 
 int	ft_putchar_fdp(t_i8 c, t_i32 fd)
 {
-	int	c;
-
-	c = 1;
 	if (fd < 0)
-		return ;
+		return (0);
 	write(fd, &c, 1);
-	return (c);
+	return (1);
 }
