@@ -21,6 +21,6 @@
 #include "libft/libft.h"
 
 int	ft_printf(const char *str, ...);
-int	ft_print_ptr(unsigned long ptr);
+int	ft_print_ptr(unsigned long long ptr);
 
 #endif

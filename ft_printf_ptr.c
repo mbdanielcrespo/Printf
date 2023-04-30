@@ -12,49 +12,50 @@
 
 #include "ft_printf.h"
 
-int ft_shift_pos(unsigned long shift_val, int *c)
+int	ft_ptrlen(unsigned long long ptr)
 {
-	int
-	w = 0;
-	while(w < sizeof(unsigned  * 2 - 1 - c)
-	{
-		shift_val /= 16;
-		w++;
-	}
-}
-
-int	ft_print_ptr(unsigned   ptr)
-{
-	unsigned long 	shift_val;
-	char			*str_ptr;
-	unsigned long 	index;
-	unsigned long 	c;
-	unsigned long 	w;
+	int	c;
 
 	c = 0;
-	w = 0;
-	str_ptr = (char *)malloc(sizeof(ptr) * 2 + 3);
-	if (!str_ptr)
-		return (0);
-	str_ptr[0] = '0';
-	str_ptr[1] = 'x';
-	while (c < sizeof(str_ptr) * 2 - 1)
+	while (ptr != 0)
 	{
-		shift_val = ptr;
-		w = 0;
-		while (w < sizeof(ptr * 2 - c) - 3)
-		{
-			shift_val /= 16;
-			w++;
-		}		
 		c++;
-		index = shift_val % 16;
-		str_ptr[2 + c] = HEX_L[index];
+		ptr /= 16;
 	}
-	str_ptr[c] = '\0';
-	write(1, str_ptr, c);
-	return(c);
+	return (c);
 }
-/*
-//printf("Iteration -> %llu: shift_value -> %llu\n", c, (unsigned long long)shift_val);
-*/
+
+void	ft_write_ptr(unsigned long long ptr)
+{
+	int	c;
+	int	index;
+
+	c = 0;
+	index = 0;
+	if (ptr >= 16)
+	{
+		ft_write_ptr(ptr / 16);
+		ft_write_ptr(ptr % 16);
+	}
+	else 
+	{
+		index = ptr % 16;
+		ft_putchar_fdp(HEX_L[index], 1);
+	}
+}
+
+int	ft_print_ptr(unsigned long long ptr)
+{
+	int	print_len;
+
+	print_len = 2;
+	ft_putstr_fdp("0x", 1);
+	if (ptr == 0)
+		print_len += ft_putchar_fdp('0', 1);
+	else
+	{
+		ft_write_ptr(ptr);
+		print_len += ft_ptrlen(ptr);
+	}
+	return (print_len);
+}

@@ -12,40 +12,28 @@
 
 #include "ft_printf.h"
 
-int	ft_print_ptr(unsigned long ptr)
+int	ft_hex_len(unsigned long num)
 {
-	unsigned long	shift_val;
-	char				*str_ptr;
-	unsigned long	index;
-	unsigned long	c;
-	unsigned long	w;
-
-	c = 0;
-	w = 0;
-	str_ptr = (char *)malloc(sizeof(ptr) * 2 + 2);
-	if (!str_ptr)
-		return (0);
-	str_ptr[0] = '0';
-	str_ptr[1] = 'x';
-	while (c < sizeof(ptr) * 2 + 2)
-	{
-		shift_val = ptr;
-		w = 0;
-		c++;
-		while (w < sizeof(unsigned long) * 2 - c)
-		{
-			shift_val /= 16;
-			w++;
-		}
-		printf("Iteration -> %lu: shift_value -> %lu: w iterations -> %lu\n", c, (unsigned long)shift_val, w);
-		index = shift_val % 16;
-		str_ptr[2 + c] = HEX_L[index];
-	}
-	str_ptr[c] = '\0';
-	write(1, str_ptr, c);
-	return(c);
+	
 }
 
+int	ft_print_hex(unsigned long num, char format)
+{
+	int 	c;
+	char	*hex;
+
+	c = 0;
+	while (num != 0)
+	{
+		if (format == 'x')
+			hex[c] = HEX_L[num % 16];
+		else if (format == 'X')
+			hex[c] = HEX_U[num % 16];
+		num = num / 16;
+		c++;
+	}
+	return (c);
+}
 
 int	ft_is_format(va_list args, char next_c)
 {
@@ -60,16 +48,16 @@ int	ft_is_format(va_list args, char next_c)
 		print_len += ft_putnbr_fdp(va_arg(args, int), 1);
 	else if (next_c == 'u')
 		print_len += ft_putnbr_fdp(va_arg(args, unsigned int), 1);
-	/*
 	else if (next_c == 'x')
-					ft_print_hex(va_arg(args, uintptr_t), 'x');
+		print_len += ft_print_hex(va_arg(args, uintptr_t), 'x');
 	else if (next_c == 'X')
-					ft_print_hex(va_arg(args, uintptr_t), 'X');
+		print_len += ft_print_hex(va_arg(args, uintptr_t), 'X');
+	/*
 	else if (next_c == '%')	
 					ft_putchar_fd('%');
 	*/
 	else if (next_c == 'p')
-		ft_print_ptr(va_arg(args, unsigned long long));
+		print_len += ft_print_ptr(va_arg(args, unsigned long long));
 	//else if (next_c == 'd')
 		//ft_putnbr_fd();
 	return (print_len);
