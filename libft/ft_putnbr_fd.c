@@ -6,7 +6,7 @@
 /*   By: danalmei <danalmei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 13:49:41 by danalmei          #+#    #+#             */
-/*   Updated: 2023/04/28 19:34:12 by danalmei         ###   ########.fr       */
+/*   Updated: 2023/04/30 19:08:24 by danalmei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_putnbr_fdp(t_i32 n, t_i32 fd)
 {
 	t_i64	nb;
-	int	c;
+	int		c;
 
 	c = 0;
 	nb = n;
@@ -33,7 +33,7 @@ int	ft_putnbr_fdp(t_i32 n, t_i32 fd)
 	}
 	else
 	{
-		c +=ft_putchar_fdp(nb + '0', fd);
+		c += ft_putchar_fdp(nb + '0', fd);
 		c++;
 	}
 	return (c);

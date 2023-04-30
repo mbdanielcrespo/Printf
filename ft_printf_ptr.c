@@ -6,7 +6,7 @@
 /*   By: danalmei <danalmei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 21:27:55 by danalmei          #+#    #+#             */
-/*   Updated: 2023/04/29 21:51:33 by danalmei         ###   ########.fr       */
+/*   Updated: 2023/04/30 19:04:42 by danalmei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,15 @@ int	ft_ptrlen(unsigned long long ptr)
 
 void	ft_write_ptr(unsigned long long ptr)
 {
-	int	c;
 	int	index;
 
-	c = 0;
 	index = 0;
 	if (ptr >= 16)
 	{
 		ft_write_ptr(ptr / 16);
 		ft_write_ptr(ptr % 16);
 	}
-	else 
+	else
 	{
 		index = ptr % 16;
 		ft_putchar_fdp(HEX_L[index], 1);
