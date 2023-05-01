@@ -6,7 +6,7 @@
 /*   By: danalmei <danalmei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 13:44:43 by danalmei          #+#    #+#             */
-/*   Updated: 2023/04/28 19:32:40 by danalmei         ###   ########.fr       */
+/*   Updated: 2023/05/01 18:28:29 by danalmei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 int	ft_putchar_fdp(t_i8 c, t_i32 fd)
 {
-	if (fd < 0)
-		return (0);
 	write(fd, &c, 1);
 	return (1);
 }

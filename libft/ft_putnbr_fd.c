@@ -6,7 +6,7 @@
 /*   By: danalmei <danalmei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 13:49:41 by danalmei          #+#    #+#             */
-/*   Updated: 2023/04/30 19:08:24 by danalmei         ###   ########.fr       */
+/*   Updated: 2023/05/01 20:07:10 by danalmei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int	ft_putnbr_fdp(t_i32 n, t_i32 fd)
 	else
 	{
 		c += ft_putchar_fdp(nb + '0', fd);
-		c++;
 	}
 	return (c);
 }
