@@ -6,7 +6,7 @@
 /*   By: danalmei <danalmei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 20:08:49 by danalmei          #+#    #+#             */
-/*   Updated: 2023/04/30 19:05:07 by danalmei         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:49:43 by danalmei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@
 # include "libft/libft.h"
 
 int	ft_printf(const char *str, ...);
-int	ft_print_ptr(unsigned long long ptr);
+int	ft_print_ptr(unsigned long ptr);
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: danalmei <danalmei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 20:09:57 by danalmei          #+#    #+#             */
-/*   Updated: 2023/05/01 20:22:40 by danalmei         ###   ########.fr       */
+/*   Updated: 2023/05/03 20:02:02 by danalmei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_hex(long long int num, char format)
+int	ft_print_hex(unsigned int num, char format)
 {
 	int	c;
 
@@ -69,7 +69,7 @@ int	ft_is_format(va_list args, char next_c)
 	else if (next_c == '%')
 		print_len += ft_putchar_fdp('%', 1);
 	else if (next_c == 'p')
-		print_len += ft_print_ptr(va_arg(args, unsigned long long));
+		print_len += ft_print_ptr(va_arg(args, unsigned long));
 	return (print_len);
 }
 
@@ -84,7 +84,7 @@ int	ft_printf(const char *str, ...)
 	va_start(args, str);
 	while (str[c] != '\0')
 	{
-		if (str[c] == '%' && str[c + 1] != '\0')
+		if (str[c] == '%')
 		{
 			print_len += ft_is_format(args, str[c + 1]);
 			c++;
