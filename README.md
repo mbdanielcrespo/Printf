@@ -27,8 +27,8 @@ This file contains the main function ft_printf and several helper functions.
 
 * ```ft_printf```: This is the main function. It takes a format string and a variable number of arguments. It iterates over the format string and prints the arguments as per the format specifiers. It returns the number of characters printed.
 
-### Usage
+## Usage
 To use the ft_printf function, include the **'ft_printf.h'** header file in your C program. Then, you can call the function in the same way as the standard printf function. The function supports the following format specifiers: 'c', 's', 'i', 'u', 'd', 'x', 'X', '%', and 'p'.
 
-### Note
+## Note
 This project uses some functions from the libft library, a custom library created as part of the 42 school curriculum. The library includes some of the most important basic functions in C. The project also includes a Makefile for easy compilation of the code.
