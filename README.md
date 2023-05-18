@@ -1,9 +1,9 @@
-# **ft_printf: A Recreation of the printf Function**
-## **Project Overview**
+# **ft_printf - 42 School Project**
+### **Project Overview**
 This project is a recreation of the printf function, a commonly used output function in C. The function is part of the standard library and is used for formatted output to the screen. The recreated function, named ft_printf, mimics the behavior of the original printf function to a certain degree.
 The project is a part of the curriculum at 42 school.
 
-## **Code Explanation**
+### **Code Explanation**
 The project consists of three main files: **'ft_printf_ptr.'**, **'ft_printf.h'**, and **'ft_printf.c'**.
 
 ### **ft_printf.h**
