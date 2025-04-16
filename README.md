@@ -1,34 +1,114 @@
-# **ft_printf - 42 School Project**
-### **Project Overview**
-This project is a recreation of the printf function, a commonly used output function in C. The function is part of the standard library and is used for formatted output to the screen. The recreated function, named ft_printf, mimics the behavior of the original printf function to a certain degree.
-The project is a part of the curriculum at 42 school.
+# 🖨️ ft_printf
 
-### **Code Explanation**
-The project consists of three main files: **'ft_printf_ptr.'**, **'ft_printf.h'**, and **'ft_printf.c'**.
+![42 Badge](https://img.shields.io/badge/42-ft__printf-brightgreen)
+![Score](https://img.shields.io/badge/Score-100%2F100-success)
+![Language](https://img.shields.io/badge/Language-C-blue)
+![Status](https://img.shields.io/badge/Status-Completed-success)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/byaliego/42-project-badges/main/badges/ft_printfe.png" alt="ft_printf Badge" width="150" height="150">
+</p>
+
+## 📝 Introduction
+
+**ft_printf** is a 42 School project that involves recoding the famous C library function `printf()`. This project is an opportunity to discover variadic functions and improve code organization through a complex task.
+
+> "By reimplementing printf, you'll learn about handling multiple types of arguments, string formatting, and precise memory management."
+
+The primary goal is to create a function that mimics the behavior of the standard printf function, handling various format specifiers and conversion options.
+
+## 🎯 Project Objectives
+
+- Implement a function that formats and prints data to stdout
+- Handle variable arguments in C
+- Process multiple format specifiers
+- Develop a robust string parsing mechanism
+- Apply proper memory management techniques
+
+## 📋 Function Prototype
+
+```c
+int ft_printf(const char *format, ...);
+```
+
+## ✅ Implemented Format Specifiers
+
+| Specifier | Description | Example |
+|-----------|-------------|---------|
+| **%c** | Single character | `ft_printf("%c", 'X')` → `X` |
+| **%s** | String of characters | `ft_printf("%s", "hello")` → `hello` |
+| **%p** | Pointer address in hexadecimal | `ft_printf("%p", ptr)` → `0x7ffeeb9a52e0` |
+| **%d** | Decimal (base 10) integer | `ft_printf("%d", 42)` → `42` |
+| **%i** | Integer in base 10 | `ft_printf("%i", 42)` → `42` |
+| **%u** | Unsigned decimal integer | `ft_printf("%u", 42)` → `42` |
+| **%x** | Hexadecimal (base 16) lowercase | `ft_printf("%x", 42)` → `2a` |
+| **%X** | Hexadecimal (base 16) uppercase | `ft_printf("%X", 42)` → `2A` |
+| **%%** | Percent sign | `ft_printf("%%")` → `%` |
+
+## 🧩 Project Structure
+
+The project consists of three main files:
+
+```
+ft_printf/
+├── Makefile
+├── ft_printf.c       # Main implementation with helper functions
+├── ft_printf_ptr.c   # Functions for handling pointer printing
+└── ft_printf.h       # Header with prototypes and hex strings
+```
+
+## 🛠️ Code Explanation
 
 ### **ft_printf.h**
-This is the header file for the project. It includes the function prototypes and necessary preprocessor directives for the project. The file defines two hexadecimal strings for lower and upper case hexadecimal numbers. It also includes the standard libraries needed for the project, such as unistd.h and stdarg.h, and the custom library libft.h.
+This header file includes:
+- Function prototypes for all functions in the project
+- Hexadecimal string definitions for lowercase and uppercase
+- Standard library includes (`unistd.h`, `stdarg.h`)
+- Custom `libft.h` library include
 
 ### **ft_printf_ptr.c**
-This file contains two functions, ```ft_write_ptr``` and ```ft_print_ptr```, which are used to handle pointer type arguments in the ```ft_printf``` function.
+Contains specialized functions for handling pointer arguments:
 
-* ```ft_write_ptr```: This function recursively writes the hexadecimal representation of a pointer address. It uses a base of 16 and writes the hexadecimal characters to the output.
-
-* ```ft_print_ptr```: This function handles the printing of pointer addresses. If the pointer is null, it prints "(nil)". Otherwise, it prints the hexadecimal representation of the pointer address, prefixed with "0x".
+| Function | Description |
+|----------|-------------|
+| **ft_write_ptr** | Recursively writes a pointer's hexadecimal representation |
+| **ft_print_ptr** | Manages pointer output formatting - prints "(nil)" for NULL or "0x" prefix followed by address |
 
 ### **ft_printf.c**
-This file contains the main function ft_printf and several helper functions.
+Contains the main function and helper functions:
 
-* ```ft_print_hex```: This function prints an unsigned integer in hexadecimal format. It supports both lower case ('x') and upper case ('X') formats.
+| Function | Description |
+|----------|-------------|
+| **ft_print_hex** | Converts and prints unsigned integer in hexadecimal (lowercase or uppercase) |
+| **ft_print_unsigned** | Handles printing of unsigned integers |
+| **ft_is_format** | Analyzes format specifier and routes to appropriate handler function |
+| **ft_printf** | Main function that parses format string and processes variable arguments |
 
-* ```ft_print_unsigned```: This function prints an unsigned integer.
+## 🧠 Skills Developed
 
-* ```ft_is_format```: This function checks the format specifier and calls the appropriate function to handle the argument. It supports 'c', 's', 'i', 'u', 'd', 'x', 'X', '%', and 'p' format specifiers.
+- Working with variadic functions in C
+- Advanced string parsing and formatting
+- Type conversion and handling
+- Code organization in a modular structure
+- Recursive implementation techniques
+- Memory efficiency in string handling
 
-* ```ft_printf```: This is the main function. It takes a format string and a variable number of arguments. It iterates over the format string and prints the arguments as per the format specifiers. It returns the number of characters printed.
+---
 
-## Usage
-To use the ft_printf function, include the **'ft_printf.h'** header file in your C program. Then, you can call the function in the same way as the standard printf function. The function supports the following format specifiers: 'c', 's', 'i', 'u', 'd', 'x', 'X', '%', and 'p'.
+<div align="center">
+  
+  ### 📊 Project Stats
+  
+  | Metric | Value |
+  |--------|-------|
+  | Final Score | 100/100 |
+  | Format Specifiers | 9 |
+  | Files | 3 |
+  | Dependencies | libft |
+  
+</div>
 
-## Note
-This project uses some functions from the libft library, a custom library created as part of the 42 school curriculum. The library includes some of the most important basic functions in C. The project also includes a Makefile for easy compilation of the code.
+<p align="center">
+  <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" alt="C">
+  <img src="https://img.shields.io/badge/42-000000?style=for-the-badge&logo=42&logoColor=white" alt="42">
+</p>
